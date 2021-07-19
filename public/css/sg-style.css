@@ -1,0 +1,25 @@
+.sg-shadow{
+    box-shadow: 0 0 0 1px rgba(61,119,180,.12), 0 8px 16px 0 rgba(41, 58, 80, 0.55);
+}
+
+.x_title {
+    border-bottom: 2px solid #28a745 !important;
+}
+
+.x_title_danger {
+    border-bottom: 2px solid #dd4b39;
+    padding: 1px 5px 6px;
+    margin-bottom: 10px;
+}
+
+.x_title_warning {
+    border-bottom: 2px solid #f39c12;
+    padding: 1px 5px 6px;
+    margin-bottom: 10px;
+}
+
+.x_title_primary {
+    border-bottom: 2px solid #3c8dbc;
+    padding: 1px 5px 6px;
+    margin-bottom: 10px;
+}
