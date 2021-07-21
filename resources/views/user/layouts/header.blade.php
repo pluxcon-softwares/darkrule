@@ -104,6 +104,24 @@
             </div>
           </li>
 
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+              <i class="fas fa-globe"></i>
+              Lang
+            </a>
+            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                <a class="nav-link" href="{{ url()->current() }}?lang=en">
+                    <img src="{{ asset('images/united-states.png') }}" style="width: 18px;">
+                    EN
+                  </a>
+
+                  <a class="nav-link" href="{{ url()->current() }}?lang=ru">
+                    <img src="{{ asset('images/russia.png') }}" style="width: 18px;">
+                    RU
+                  </a>
+            </div>
+          </li>
+
       </ul>
     </div>
   </nav>
