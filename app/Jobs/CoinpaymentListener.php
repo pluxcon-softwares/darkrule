@@ -8,6 +8,8 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
+use App\Models\User;
+
 class CoinpaymentListener implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -29,11 +31,11 @@ class CoinpaymentListener implements ShouldQueue
      * @return void
      */
     public function handle() {
-        
+
         /**
          * Handle your transaction here
          * the parameter is :
-         * 
+         *
          * address
          * amount
          * amountf
@@ -52,13 +54,13 @@ class CoinpaymentListener implements ShouldQueue
          * type
          * payload
          * transaction_type --> value: new | old
-         * 
+         *
          * ----------------- PAYMENT STATUS -------------------
          * 0   : Waiting for buyer funds
          * 1   : Funds received and confirmed, sending to you shortly
          * 100 : Complete,
          * -1  : Cancelled / Timed Out
-         * 
+         *
          * ----------------------------------------------------
          *  You can use transaction_type to distinguish new transactions or old transactions
          * ----------------------------------------------------
@@ -66,6 +68,12 @@ class CoinpaymentListener implements ShouldQueue
          *  $this->transaction['transaction_type']
          *  // out: new / old
          */
+        if($this->transaction['transaction_type'] == 'old' && $this->transaction['status'] >= 100)
+            {
+                $user = User::where('email', $this->transaction['buyer_email'])->first();
+                $user->wallet += $this->transaction['amount_total_fiat'];
+                $user->save();
+            }
 
          return 0;
     }
