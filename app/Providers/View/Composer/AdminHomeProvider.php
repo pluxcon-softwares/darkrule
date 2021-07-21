@@ -29,49 +29,19 @@ class AdminHomeProvider extends ServiceProvider
     public function boot()
     {
         View::composer('admin.partials.top_widgets', function($view){
-            $countAccounts = DB::table('products')
-                            ->select('products.*')
-                            ->join('sub_categories', 'products.sub_category_id', '=', 'sub_categories.id')
-                            ->join('categories', 'sub_categories.category_id', '=', 'categories.id')
-                            ->where('categories.category_name', '=', 'accounts')
-                            ->orWhere('categories.category_name', '=', 'account')
-                            ->where('products.in_stock', '=', 1)
-                            ->count();
-
-            $countTools = DB::table('products')
-                            ->select('products.*')
-                            ->join('sub_categories', 'products.sub_category_id', '=', 'sub_categories.id')
-                            ->join('categories', 'sub_categories.category_id', '=', 'categories.id')
-                            ->where('categories.category_name', '=', 'tools')
-                            ->orWhere('categories.category_name', '=', 'tool')
-                            ->where('products.in_stock', '=', 1)
-                            ->count();
-
-            $countTutorials = DB::table('products')
-                            ->select('products.*')
-                            ->join('sub_categories', 'products.sub_category_id', '=', 'sub_categories.id')
-                            ->join('categories', 'sub_categories.category_id', '=', 'categories.id')
-                            ->where('categories.category_name', '=', 'tutorials')
-                            ->orWhere('categories.category_name', '=', 'tutorial')
-                            ->where('products.in_stock', '=', 1)
-                            ->count();
-
-            $countBankLogs = DB::table('products')
-                            ->select('products.*')
-                            ->join('sub_categories', 'products.sub_category_id', '=', 'sub_categories.id')
-                            ->join('categories', 'sub_categories.category_id', '=', 'categories.id')
-                            ->where('categories.category_name', '=', 'bank logs')
-                            ->orWhere('categories.category_name', '=', 'bank log')
-                            ->orWhere('categories.category_name', '=', 'bank cheques')
-                            ->orWhere('categories.category_name', '=', 'bank checks')
-                            ->orWhere('categories.category_name', '=', 'bank check')
-                            ->where('products.in_stock', '=', 1)
-                            ->count();
+            $countUsers = DB::table('users')->count();
+            $countProducts = DB::table('products')->count();
+            $totalWallets = DB::table('coinpayment_transactions')->where('status', '>=', 100)->get();
+            $totalAmount = null;
+            foreach($totalWallets as $key=>$value) {
+                $totalAmount += $value->amount_total_fiat;
+            }
+            $countTickets = DB::table('tickets')->count();
             $view->with([
-                'countAccounts' => $countAccounts,
-                'countTools'    => $countTools,
-                'countTutorials' => $countTutorials,
-                'countBankLogs'     =>  $countBankLogs
+                'countUsers' => $countUsers,
+                'countProducts' => $countProducts,
+                'totalWallets' => $totalAmount ? $totalAmount : 0,
+                'countTickets' => $countTickets
                 ]);
         });
 

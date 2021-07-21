@@ -3,12 +3,12 @@
       <!-- small box -->
       <div class="small-box bg-info">
         <div class="inner">
-          <h3>{{ $countAccounts ? $countAccounts : 0 }}</h3>
+          <h3>{{ $countUsers ? $countUsers : 0 }}</h3>
 
-          <p>Accounts</p>
+          <p>Users</p>
         </div>
         <div class="icon">
-          <i class="fa fa-support"></i>
+          <i class="fa fa-users"></i>
         </div>
       </div>
     </div>
@@ -17,9 +17,9 @@
       <!-- small box -->
       <div class="small-box bg-success">
         <div class="inner">
-          <h3>{{ $countTools ? $countTools : 0 }}</h3>
+          <h3>{{ $countProducts ? $countProducts : 0 }}</h3>
 
-          <p>Tools</p>
+          <p>Total Products</p>
         </div>
         <div class="icon">
           <i class="fa fa-gear"></i>
@@ -31,9 +31,9 @@
       <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>{{ $countTutorials ? $countTutorials : 0 }}</h3>
+          <h3>{{ $countTickets ? $countTickets : 0 }}</h3>
 
-          <p>Tutorials</p>
+          <p>Support/Ticket</p>
         </div>
         <div class="icon">
           <i class="fa fa-mortar-board"></i>
@@ -45,9 +45,9 @@
       <!-- small box -->
       <div class="small-box bg-danger">
         <div class="inner">
-          <h3>{{ $countBankLogs ? $countBankLogs : 0 }}</h3>
+          <h3>{{ $totalWallets ? sprintf('%.2f', $totalWallets) : sprintf('%.2f', 0) }}</h3>
 
-          <p>Bank Logs</p>
+          <p>Wallet</p>
         </div>
         <div class="icon">
           <i class="fas fa-bank"></i>
