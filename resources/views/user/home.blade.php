@@ -17,6 +17,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+              @if(count($message_boards) > 0)
               <ul class="">
                   @foreach ($message_boards as $message)
                   <li>
@@ -37,6 +38,9 @@
                     </li>
                   @endforeach
               </ul>
+              @else
+                <p>No message available</p>
+              @endif
             </div>
             <!-- /.card-body -->
           </div>
