@@ -28,7 +28,7 @@ class UserHomeProvider extends ServiceProvider
     public function boot()
     {
         View::composer('user.home', function($view){
-            $message_boards = MessageBoard::select('id','title', 'created_at', 'admin_id')->where('is_published', 1)->get();
+            $message_boards = MessageBoard::select('id','title', 'body', 'created_at', 'admin_id')->where('is_published', 1)->get();
             $about_us = AboutUs::find(1);
             $view->with([
                 'message_boards' => $message_boards,

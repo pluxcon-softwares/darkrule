@@ -22,13 +22,13 @@
                   @foreach ($message_boards as $message)
                   <li>
                       <div class="block">
-                        <div class="tags">
-                          <span>{{ $message->admin->username }}</span>
-                        </div>
                         <div class="block_content">
                           <h2 class="title" style="font-size: 20px;">
                               <a href="#" class="view_message" data-message_id="{{$message->id}}">{{ $message->title }}</a>
                           </h2>
+                          <p>{{ substr($message->body, 0, 200) }}...
+                            <a href="#" class="view_message" data-message_id="{{$message->id}}">[Read More]</a>
+                         </p>
                           <div class="byline">
                             <span>{{ $message->created_at->diffForHumans() }}</span>
                           </div>
@@ -54,9 +54,9 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <a href="{{route('add.money')}}" class="btn btn-sm btn-danger"><i class="fas fa-plus-circle"></i> {{__('Add Balance')}}</a>
-              <a href="{{route('purchases')}}" class="btn btn-sm btn-success"><i class="fas fa-shopping-cart"></i> {{__('My Orders')}}</a>
-              <a href="{{route('tickets')}}" class="btn btn-sm btn-success"><i class="fas fa-comments-o"></i> {{__('Open Ticket')}}</a>
+              <a href="{{route('add.money')}}" class="btn btn-sm btn-danger p-3"><i class="fas fa-plus-circle"></i> {{__('Add Balance')}}</a>
+              <a href="{{route('purchases')}}" class="btn btn-sm btn-success p-3"><i class="fas fa-shopping-cart"></i> {{__('My Orders')}}</a>
+              <a href="{{route('tickets')}}" class="btn btn-sm btn-success p-3"><i class="fas fa-comments-o"></i> {{__('Open Ticket')}}</a>
             </div>
             <!-- /.card-body -->
           </div>
