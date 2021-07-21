@@ -61,6 +61,18 @@
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
+
+          <div class="card card-warning">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fas fa-user"></i> {{__('Fast Support 24/7')}}</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <a href="{{ url('tickets') }}" class="btn btn-primary btn-xs">{{ __('Have any Question Our Support Team is online to help you!') }}</a>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
     </div>
 
 </div>
