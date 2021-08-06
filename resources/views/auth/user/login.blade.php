@@ -42,13 +42,13 @@
     <!-- /.navbar -->
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="min-height: 515px;">
+    <div class="content-wrapper" style="">
 
       <!-- Main content -->
       <div class="content">
         <div class="container">
             <div class="row"></div>
-            <div class="row justify-content-center mt-5">
+            <div class="row justify-content-center" style="margin-top:100px;">
                 <div class="login-box">
                     <div class="login-logo">
                       <img src="{{asset('images/darkrule_site_logo.png')}}" alt="site-logo" width="15%">

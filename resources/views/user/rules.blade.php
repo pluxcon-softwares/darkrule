@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-8 mr-auto ml-auto mt-3">
+        <div class="col-md-8 mr-auto ml-auto mt-5">
             <div class="card card-blue">
                 <div class="card-header">
                     <h3 class="card-title">{{__('All Site Rules')}}</h3>
