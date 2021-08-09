@@ -1,7 +1,7 @@
 <html lang="en" style="height: auto;"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Darkrule | Log in</title>
+    <title>{{ config('app.name') }} | Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -20,8 +20,8 @@
     <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
       <div class="container">
         <a href="{{ route('home') }}" class="navbar-brand">
-          <img src="{{ asset('images/darkrule_site_logo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">Darkrule</span>
+          <img src="{{ asset('images/blackcrow.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="">
+          <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
         </a>
 
         <!-- Right navbar links -->
@@ -51,8 +51,8 @@
             <div class="row justify-content-center" style="margin-top:100px;">
                 <div class="login-box">
                     <div class="login-logo">
-                      <img src="{{asset('images/darkrule_site_logo.png')}}" alt="site-logo" width="15%">
-                      Darkrule
+                      <img src="{{asset('images/blackcrow.png')}}" alt="site-logo" width="20%">
+                      {{ config('app.name') }}
                     </div>
                     <!-- /.login-logo -->
                     <div class="card">
@@ -164,7 +164,7 @@
     <footer class="main-footer">
 
       <!-- Default to the left -->
-      <strong>{{__('Copyright')}} © 2014-<?php echo date('Y') ?> <a href="#">Darkrule Shop</a>.</strong> {{__('All rights reserved.')}}
+      <strong>{{__('Copyright')}} © 2014-<?php echo date('Y') ?> <a href="#">{{ config('app.name') }}</a>.</strong> {{__('All rights reserved.')}}
     </footer>
   </div>
   <!-- ./wrapper -->

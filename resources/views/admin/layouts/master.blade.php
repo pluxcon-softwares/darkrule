@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SkullNet @if(isset($title)) {{ $title }} @endif </title>
+  <title>{{ config('app.name') }} @if(isset($title)) {{ $title }} @endif </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -71,7 +71,7 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-<?php date('Y') ?> <a href="https://darkrule.shop">Darkrule Shop</a>.</strong>
+    <strong>Copyright &copy; 2014-<?php date('Y') ?> <a href="https://crowshop.cc/admin">{{ config('app.name') }}</a>.</strong>
     All rights reserved.
   </footer>
 </div>
