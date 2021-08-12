@@ -8,7 +8,15 @@
 
 <div class="row"></div>
 
-<div class="row mt-5">
+<div class="row mt-3">
+
+    <div class="col-12 mb-3">
+        @if(session('lowfunds'))
+            <div class="alert alert-danger alert-dismissible sg-flash-message" role="alert">
+               <i class="fas fa-times"></i> {{ session('lowfunds') }}
+            </div>
+        @endif
+    </div>
 
     <div class="col-md-6">
         <div class="card card-success">

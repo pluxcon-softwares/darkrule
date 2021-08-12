@@ -48,7 +48,7 @@
       <div class="content">
         <div class="container">
             <div class="row"></div>
-            <div class="row justify-content-center" style="margin-top:100px;">
+            <div class="row justify-content-center" style="margin-top:1%;">
                 <div class="login-box">
                     <div class="login-logo" style="font-size:30px;">
                       <img src="{{asset('images/blackcrow.png')}}" alt="site-logo" width="20%;">
@@ -65,21 +65,21 @@
 
                         <div class="form-group">
                           <input type="text" name="username" class="form-control {{ $errors->has('username') ? 'is-invalid' : '' }}" placeholder="{{ __('Username') }}">
-                          <div class="invalid-feedback" style="color:#ffffff; font-size:12px; margin-top:-10px;">
+                          <div class="invalid-feedback" style="color:red; font-size:12px; margin-top:1%;">
                               {{$errors->first('username')}}
                           </div>
                         </div>
 
                         <div class="form-group">
                           <input type="text" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="{{ __('Email') }}">
-                          <div class="invalid-feedback" style="color:#ffffff; font-size:12px; margin-top:-10px;">
-                              {{$errors->first('email')}}
+                          <div class="invalid-feedback" style="color:red; font-size:12px; margin-top:1%;">
+                              {{__($errors->first('email'))}}
                           </div>
                         </div>
 
                         <div class="form-group">
                           <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="{{ __('Password') }}">
-                          <div class="invalid-feedback" style="color:#ffffff; font-size:12px; margin-top:-10px;">
+                          <div class="invalid-feedback" style="color:red; font-size:12px; margin-top:1%;">
                             {{$errors->first('password')}}
                           </div>
                         </div>
@@ -128,11 +128,11 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-7">
+                                <div class="col-md-6">
                                   <h6>{{__('Already have account?')}}</h6>
                                 </div>
-                                <div class="col-md-5">
-                                  <a href="{{ route('login') }}" class="btn btn-block btn-warning">{{ __('Sign In') }}</a>
+                                <div class="col-md-6">
+                                  <a href="{{ route('login') }}" class="btn btn-block btn-warning float-right">{{ __('Sign In') }}</a>
                                 </div>
                             </div>
                         </div>

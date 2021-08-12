@@ -48,7 +48,7 @@
       <div class="content">
         <div class="container">
             <div class="row"></div>
-            <div class="row justify-content-center" style="margin-top:100px;">
+            <div class="row justify-content-center" style="margin-top:1%;">
                 <div class="login-box">
                     <div class="login-logo">
                       <img src="{{asset('images/blackcrow.png')}}" alt="site-logo" width="20%">
@@ -78,10 +78,10 @@
                                 <span class="fas fa-envelope"></span>
                               </div>
                             </div>
-                          @if($errors->has('email'))
-                          <p style="font-size: 12px; color: red;">{{ $errors->first('email') }}</p>
-                          @endif
                         </div>
+                            @if($errors->has('email'))
+                                <p style="font-size: 12px; color: red; margin-top:-12px;">{{ $errors->first('email') }}</p>
+                            @endif
 
                         <div class="input-group mb-3">
                           <input type="password" name="password" class="form-control" placeholder="{{ __('Password') }}" />
@@ -90,10 +90,10 @@
                                 <span class="fas fa-lock"></span>
                               </div>
                           </div>
-                          @if($errors->has('password'))
-                          <p style="font-size: 12px; color: red;">{{ $errors->first('password') }}</p>
-                          @endif
                         </div>
+                            @if($errors->has('password'))
+                                <p style="font-size: 12px; color: red; margin-top:-12px;">{{ $errors->first('password') }}</p>
+                            @endif
 
                         <div class="mt-2">
                           <p style="font-size: 12px; text-align:center;">{{ __('Please type the Number EXACTLY like in number box') }}</p>
@@ -116,7 +116,7 @@
 
                           @if(session()->has('captcha_error'))
                           <div>
-                              <p style="text-align: center; text-align: center; color: red">{{ __(session('captcha_error')) }}</p>
+                              <p style="text-align: center; color: red">{{ __(session('captcha_error')) }}</p>
                           </div>
                           @endif
 
@@ -128,12 +128,18 @@
 
                        </div>
 
+                       <div class="row mt-3">
+                           <div class="col-12">
+                            <button type="submit" class="btn btn-danger btn-block">{{__('Log in')}}</button>
+                            </div>
+                       </div>
+
                         <div class="row mb-3 mt-3">
-                          <div class="col-md-7 col-sm-7 col-xs-12">
-                              <a href="{{route('create')}}" class="btn btn-info"> {{__('Create Account')}} </a>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <p class="p-2" style="font-size:12px; font-weight:bold;">Dont have account yet?</p>
                           </div>
-                          <div class="col-md-5 col-sm-5 col-xs-12">
-                              <button type="submit" class="btn btn-danger">{{__('Log in')}}</button>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <a href="{{route('create')}}" class="btn btn-info float-right"> {{__('Create Account')}} </a>
                           </div>
                         </div>
 

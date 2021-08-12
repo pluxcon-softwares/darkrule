@@ -44,14 +44,14 @@ class WalletController extends Controller
 
         $transaction['order_id'] = uniqid();
         $transaction['amountTotal'] = (FLOAT) $request->deposit;
-        $transaction['note'] = 'Darkrule Wallet Funding';
+        $transaction['note'] = config('app.name') . ' Wallet Funding';
         $transaction['buyer_name'] = Auth::user()->username;
         $transaction['buyer_email'] = Auth::user()->email;
         $transaction['redirect_url'] = route('deposit.complete');
         $transaction['cancel_url'] = route('deposit.cancel');
 
         $transaction['items'][] = [
-            'itemDescription' => 'Darkrule Wallet Funding',
+            'itemDescription' => config('app.name').' Wallet Funding',
             'itemPrice' => (FLOAT) $request->deposit,
             'itemQty' => (INT) 1,
             'itemSubtotalAmount' => (FLOAT) $request->deposit

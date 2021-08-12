@@ -30,7 +30,7 @@ class TablesDataSeeder extends Seeder
 
         DB::table('admins')->insert([
             'username' => 'Admin',
-            'email' => 'admin@skullnet.cc',
+            'email' => 'admin@crowshop.cc',
             'password' => Hash::make('123456'),
             'access'    => 2,
             'created_at' => Carbon::now(),
