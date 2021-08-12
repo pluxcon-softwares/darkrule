@@ -33,7 +33,7 @@ class UserAuthController extends Controller
         $request->validate([
             'username' => 'required|unique:users,username',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6|max:15|confirmed',
+            'password' => 'required|min:6|max:32|confirmed',
             'captcha_text' => 'required'
         ]);
 
