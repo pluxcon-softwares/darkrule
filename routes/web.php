@@ -122,8 +122,8 @@ Route::group(['middleware'=>['setlocale']], function(){
     Route::post('/home/profile/change-password', 'User\UserController@changePassword')->name('change.password');
 
     // Products
-    Route::get('products/{id}', 'User\ProductController@products')->name('products');
-    Route::get('product/sub-category/{id}', 'User\ProductController@productBySubCategoryID');
+    Route::get('products/{id}', 'User\ProductController@products')->name('products')->middleware('lowfunds');
+    Route::get('product/sub-category/{id}', 'User\ProductController@productBySubCategoryID')->middleware('lowfunds');
 
     // Credit Cards Routes
     Route::get('/cards', 'User\CardController@index')->name('cards');
