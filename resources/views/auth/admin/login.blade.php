@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Darkrule | Log in</title>
+  <title>{{ config('app.name') }} | Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -18,8 +18,8 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <img src="{{asset('images/darkrule_site_logo.png')}}" alt="site-logo" width="15%">
-    <a href="#"><b>Darkrule</b>SHOP</a>
+    <img src="{{asset('images/blackcrow.png')}}" alt="site-logo" width="15%">
+    <a href="#"><b>{{ config('app.name') }}</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
