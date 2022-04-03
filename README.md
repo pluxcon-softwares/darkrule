@@ -21,6 +21,10 @@ Once downloaded/cloned go to the project directory on terminal/command line and 
 
     composer install
 
+        or
+    
+    composer update
+
 Once composer is installed, run migration: 
 
     php artisan migrate
