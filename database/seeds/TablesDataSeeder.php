@@ -19,19 +19,19 @@ class TablesDataSeeder extends Seeder
         DB::table('admins')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        DB::table('admins')->insert([
-            'username' => 'System',
-            'email' => 'prolabdomains@gmail.com',
-            'password' => Hash::make('@@FOrcehackhts22@@'),
-            'access'    => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
-        ]);
+        // DB::table('admins')->insert([
+        //     'username' => 'System',
+        //     'email' => 'system@app.com',
+        //     'password' => Hash::make('123456789'),
+        //     'access'    => 1,
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now()
+        // ]);
 
         DB::table('admins')->insert([
             'username' => 'Admin',
-            'email' => 'admin@crowshop.cc',
-            'password' => Hash::make('123456'),
+            'email' => 'admin@app.com',
+            'password' => Hash::make('123456789'),
             'access'    => 2,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
